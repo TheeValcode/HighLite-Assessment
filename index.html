@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HighLite Crypto - Real-time Assets</title>
+    <meta name="description" content="A premium, real-time cryptocurrency asset tracker.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+    <div class="container">
+        <header>
+            <h1>HighLite Crypto</h1>
+            <div class="controls">
+
+                <button id="theme-toggle" class="btn btn-icon" title="Toggle color theme">
+                    <svg id="sun-icon" class="" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg id="moon-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+
+
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Track the Pulse of Digital Assets</h2>
+                <p>Real-time insights into the world's leading cryptocurrencies. Premium data, glassmorphic design, and
+                    instant search at your fingertips.</p>
+                <a href="#market-section" class="btn btn-primary hero-cta">Explore Markets</a>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-card">
+                <h3>About HighLite</h3>
+                <p>HighLite is a demonstration project focused on high-performance frontend engineering. We leverage the
+                    CoinGecko Public API to provide accurate market data with a focus on visual excellence and user
+                    experience. Our mission is to make digital asset tracking simple, beautiful, and accessible.</p>
+            </div>
+        </section>
+
+        <section id="market-section" class="market-controls">
+            <div class="filter-group">
+                <div class="range-inputs">
+                    <input type="number" id="min-price" class="filter-input" placeholder="Min $">
+                    <input type="number" id="max-price" class="filter-input" placeholder="Max $">
+                    <button id="clear-btn" class="btn btn-icon" title="Clear filters">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <button id="sort-btn" class="btn btn-primary">
+                    <span id="sort-label">Sort: Default</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 15l5 5 5-5M7 9l5-5 5 5" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="error-container" class="error-message hidden">
+            <p id="error-text">Something went wrong. Please try again later.</p>
+        </div>
+
+        <main id="asset-grid" class="asset-grid">
+            <!-- Asset cards will be injected here -->
+        </main>
+
+
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 HighLite Crypto Assessment. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
