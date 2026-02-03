@@ -14,8 +14,7 @@ const assetGrid = document.getElementById('asset-grid');
 const minPriceInput = document.getElementById('min-price');
 const maxPriceInput = document.getElementById('max-price');
 const clearBtn = document.getElementById('clear-btn');
-const sortBtn = document.getElementById('sort-btn');
-const sortLabel = document.getElementById('sort-label');
+const sortSelect = document.getElementById('sort-select');
 const themeToggle = document.getElementById('theme-toggle');
 const loader = document.getElementById('loader');
 const errorContainer = document.getElementById('error-container');
@@ -78,20 +77,10 @@ function applyFiltersAndSort() {
 }
 
 /**
- * Cycle through sort orders: Default -> High-to-Low -> Low-to-High
+ * Handle sort dropdown change
  */
-function cycleSort() {
-    if (sortOrder === 'default') {
-        sortOrder = 'desc';
-        sortLabel.textContent = 'Sort: High to Low';
-    } else if (sortOrder === 'desc') {
-        sortOrder = 'asc';
-        sortLabel.textContent = 'Sort: Low to High';
-    } else {
-        sortOrder = 'default';
-        sortLabel.textContent = 'Sort: Default';
-    }
-
+function handleSortChange() {
+    sortOrder = sortSelect.value;
     applyFiltersAndSort();
 }
 
@@ -156,7 +145,7 @@ function clearFilters() {
     minPriceInput.value = '';
     maxPriceInput.value = '';
     sortOrder = 'default';
-    sortLabel.textContent = 'Sort: Default';
+    sortSelect.value = 'default';
     applyFiltersAndSort();
 }
 
@@ -170,7 +159,7 @@ function hideError() { errorContainer.classList.add('hidden'); }
 minPriceInput.addEventListener('input', applyFiltersAndSort);
 maxPriceInput.addEventListener('input', applyFiltersAndSort);
 clearBtn.addEventListener('click', clearFilters);
-sortBtn.addEventListener('click', cycleSort);
+sortSelect.addEventListener('change', handleSortChange);
 themeToggle.addEventListener('click', toggleTheme);
 
 // Initialize
